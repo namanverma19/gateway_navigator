@@ -1,0 +1,4 @@
+[build]
+base = "gateway-navigator/payment-frontend"
+publish = "dist"
+command = "npm run build"
