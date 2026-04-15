@@ -1,0 +1,22 @@
+/* src/index.css */
+
+/* 1. Reset margins and paddings for a clean slate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Apply INTER font to the whole body */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc; /* Checkout page jaisa background */
+  color: #0f172a;
+}
+
+/* 3. Inputs, buttons aur select tags by default font inherit nahi karte, isliye unko force karna padta hai */
+input, button, select, textarea {
+  font-family: inherit;
+}

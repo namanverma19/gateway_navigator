@@ -1,0 +1,205 @@
+/* Main Page Wrapper */
+.juspay-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #f3f4f6;
+}
+
+/* Central Card Container */
+.auth-main-container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 600px; /* Allows height to grow for Register fields */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+/* --- LEFT SIDE: Tech Animation --- */
+.juspay-video-section {
+    flex: 1;
+    position: relative;
+    background-color: #0F172A; /* Deep Navy Blue */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.animation-top-brand {
+    position: absolute;
+    top: 40px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.juspay-lottie-animation {
+    width: 80%;
+    height: 80%;
+}
+
+/* --- RIGHT SIDE: Form Container --- */
+.juspay-form-section {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.juspay-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 0 20px;
+}
+
+.juspay-welcome-text h2 {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.juspay-welcome-text p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+/* --- Input Styling --- */
+.juspay-input-group {
+    margin-bottom: 16px;
+}
+
+.juspay-input-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #475569;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 11px 40px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.input-with-icon input:focus {
+    border-color: #00B5FF;
+    box-shadow: 0 0 0 3px rgba(0, 181, 255, 0.1);
+}
+
+.icon-left { position: absolute; left: 12px; color: #94a3b8; }
+.icon-right { position: absolute; right: 12px; color: #94a3b8; cursor: pointer; }
+
+/* Links */
+.juspay-link-small {
+    display: block;
+    text-align: right;
+    font-size: 0.75rem;
+    color: #00B5FF;
+    text-decoration: none;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* --- Buttons --- */
+.juspay-btn-primary {
+    width: 100%;
+    background-color: #00B5FF;
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.juspay-btn-primary:hover {
+    background-color: #0094d1;
+}
+
+/* Social Login Button */
+.juspay-btn-google {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.juspay-btn-google:hover {
+    background-color: #f9fafb;
+}
+
+.juspay-btn-google img { width: 18px; }
+
+/* --- Switcher / Divider --- */
+.toggle-text {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 20px;
+    color: #64748b;
+}
+
+.toggle-text span {
+    color: #00B5FF;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0 10px 0;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    position: relative;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: #e5e7eb;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
