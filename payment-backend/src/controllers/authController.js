@@ -5,10 +5,11 @@ import jwt from "jsonwebtoken";
 // @access  Public
 export const googleAuthSuccess = (req, res) => {
   if (!req.user) {
-    return res.status(401).json({ success: false, message: "Authentication Failed" });
+    // Agar authentication fail ho gayi toh frontend ke login page par wapas bhej do
+    return res.redirect(`${process.env.FRONTEND_URL}/login?error=auth_failed`);
   }
 
-  // 1. JWT Sign karna (Wahi secret use karenge jo manual login mein hai)
+  // 1. JWT Sign karna
   const token = jwt.sign(
     { id: req.user._id }, 
     process.env.JWT_SECRET, 
@@ -16,13 +17,13 @@ export const googleAuthSuccess = (req, res) => {
   );
 
   // 2. Frontend par Token ke saath redirect karna
-  // User ko query string mein token bhej rahe hain taaki Frontend use localStorage mein save kar sake
-  const frontendURL = `http://localhost:5173/login-success?token=${token}`;
+  // Yahan humne "http://localhost:5173" ko process.env.FRONTEND_URL se replace kiya hai
+  const redirectURL = `${process.env.FRONTEND_URL}/login-success?token=${token}`;
   
-  res.redirect(frontendURL);
+  res.redirect(redirectURL);
 };
 
-// @desc    Get Current Logged-in User (Optional but useful)
+// @desc    Get Current Logged-in User
 export const getMe = async (req, res) => {
   if (req.user) {
     res.status(200).json({
