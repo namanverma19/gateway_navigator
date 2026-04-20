@@ -3,18 +3,24 @@ import passport from "passport";
 import { googleAuthSuccess, getMe } from "../controllers/authController.js";
 
 const router = express.Router();
+
+// 1. Google Login Start: User ko Google Consent screen par bhejta hai
 router.get('/google', 
   passport.authenticate('google', { 
     scope: ['profile', 'email'],
-    prompt: 'select_account' // 🪄 YAHI HAI WO MAGIC WORD! Isse har baar popup aayega.
+    prompt: 'select_account' 
   })
 );
 
-// 2. Google Callback: Google wapas yahan bhejega
+// 2. Google Callback: Google auth code ke saath yahan wapas bhejega
 router.get(
   "/google/callback",
-  passport.authenticate("google", { session: false, failureRedirect: "http://localhost:5173/login" }),
-  googleAuthSuccess // 👈 Controller function call ho raha hai
+  passport.authenticate("google", { 
+    session: false, 
+    // Hardcoded URL ki jagah environment variable use kiya
+    failureRedirect: `${process.env.FRONTEND_URL}/login` 
+  }),
+  googleAuthSuccess // Auth success hone par ye controller JWT generate karke redirect karega
 );
 
 // 3. Check Current User
