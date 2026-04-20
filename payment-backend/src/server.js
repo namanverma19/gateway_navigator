@@ -22,7 +22,7 @@ const app = express();
 // 2. Global Middleware
 // CORS ko update kiya hai taaki frontend se credentials aur headers allow ho sakein
 app.use(cors({
-  origin: process.env.FRONTEND_URL ;
+  origin: process.env.FRONTEND_URL ,
   credentials: true
 })); 
 
