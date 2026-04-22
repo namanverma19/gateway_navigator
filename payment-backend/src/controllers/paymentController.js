@@ -45,7 +45,7 @@ export const createOrder = async (req, res) => {
     console.log("🔍 Checking Razorpay (1s)...");
     const rzpOrder = await withTimeout(
       razorpay.orders.create({ amount: amount * 100, currency: "INR", receipt: internalOrderId }),
-      1
+      1000
     );
 
     paymentRecord.gatewayUsed = 'razorpay';
